@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xpystac-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xpystac-{{ version }}.tar.gz
   sha256: 0fc56bce5280ae455f6b4fa9537062c5dc1f27773b26ebda1aa9063eff7f9416
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.0
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - xarray
     - pystac >=1.0.1
 
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/stac-utils/xpystac
