@@ -1,6 +1,6 @@
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 {% set name = "xpystac" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xpystac-{{ version }}.tar.gz
-  sha256: f3c6b98c8c70af37132c629c8e7d642a33df88ce99ae24d1b97ccdc46bb370f1
+  sha256: e2d75483b10fbd6de32fa0c242633384151c9615630e182c390ca7cb063e2922
 
 build:
   noarch: python
