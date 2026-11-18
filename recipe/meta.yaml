@@ -1,4 +1,4 @@
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 {% set name = "xpystac" %}
 {% set version = "0.6.0" %}
 
@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - xarray
-    - pystac >=1.0.1
+    - pystac-core >=1.16.0
 
 test:
   imports:
